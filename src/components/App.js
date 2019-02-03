@@ -8,7 +8,7 @@ import '../styles/App.css';
 class WeatherDisplay extends Component{
 
     collectData(place){
-        let URL = `http://api.openweathermap.org/data/2.5/weather?q=${this.props.cities[place].name}&appid=e03fcde097d74790d2a8569aa4d88bd1&units=metric`;
+        let URL = `http://api.openweathermap.org/data/2.5/weather?q=${this.props.cities[place].name}&appid=e03fcde097d74790d2a8569aa4d88bd1&units=metric&lang=ru`;
         this.props.fetchData(URL);
     }
 
@@ -31,30 +31,25 @@ class WeatherDisplay extends Component{
                 return (
                     <div>
                         <h1>
-                            {weatherData.weather[0].main} in {weatherData.name}
-                            <img src={iconUrl} alt={weatherData.description} />
-                        </h1>                             
+                            {this.props.cities[this.props.activePlace].name}
+							<img src={iconUrl} alt={weatherData.weather[0].description} />
+                        </h1> 
+						<h3>{weatherData.weather[0].description}</h3>
+                        <h4>
+                            Температура: <b> {weatherData.main.temp}°C </b>
+                        </h4>
+                        <h4>
+                            Скорость ветра: <b> {weatherData.wind.speed} м/с </b>
+                        </h4>
                         <p>
-                            Current: {weatherData.main.temp}°C
-                        </p>
-                        <p>
-                            High: {weatherData.main.temp_max}°C
-                        </p>
-                        <p>
-                            Low: {weatherData.main.temp_min}°C
-                        </p>
-                        <p>
-                            Wind Speed: {weatherData.wind.speed} m/s
-                        </p>
-                        <p>
-                            Coordinates: ({weatherData.coord.lat}, {weatherData.coord.lon})
+                            Координаты: ({weatherData.coord.lat}, {weatherData.coord.lon})
                         </p>
                     </div>
                 );
             }
         return (
             <div>
-                Loading...
+                Загрузка...
             </div>
             );
         
@@ -71,7 +66,7 @@ class App extends Component {
                     <Navbar>
                         <Navbar.Header>
                             <Navbar.Brand>
-                                Weather In Russia
+                                Погода в России
                             </Navbar.Brand>
                         </Navbar.Header>
                     </Navbar>
@@ -87,7 +82,7 @@ class App extends Component {
                                     }}>
                                         <NavDropdown
                                             eventKey="4"
-                                            title="Select a city"
+                                            title="Выберите город"
                                             id="nav-dropdown">
                                             {this.props.cities.map((city, index) => (
                                                 <MenuItem key={index} eventKey={index}>{city.name}</MenuItem>

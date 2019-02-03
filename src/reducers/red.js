@@ -27,16 +27,16 @@ export function cities(state = citiesArr, action) {
 }
 
 var citiesArr = [
-        { name: "Sankt-Peterburg", zip: "198099" },
-        { name: "Moscow", zip: "125009" },
-        { name: "Volgograd", zip: "400006" },
-        { name: "Smolensk", zip: "214000" },
-        { name: "Tomsk", zip: "634003" },
-        { name: "Vladimir", zip: "600017" },
-        { name: "Omsk", zip: "644047" },
-        { name: "Novosibirsk", zip: "630005" },
-        { name: "Yekaterinburg", zip: "620027" },
-        { name: "Kazan", zip: "420054" },
-        { name: "Velikiy Novgorod", zip: "173000" },
-        { name: "Voronezh", zip: "394038" }
+        { name: "Санкт-Петербург", zip: "198099" },
+        { name: "Москва", zip: "125009" },
+        { name: "Волгоград", zip: "400006" },
+        { name: "Смоленск", zip: "214000" },
+        { name: "Томск", zip: "634003" },
+        { name: "Владимир", zip: "600017" },
+        { name: "Омск", zip: "644047" },
+        { name: "Новосибирск", zip: "630005" },
+        { name: "Екатеринбург", zip: "620027" },
+        { name: "Казань", zip: "420054" },
+        { name: "Великий Новгород", zip: "173000" },
+        { name: "Воронеж", zip: "394038" }
     ]
